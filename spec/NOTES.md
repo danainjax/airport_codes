@@ -1,3 +1,5 @@
+** Notes add to test git push **
+
 Building my CLI Gem
 
 1. Planning the gem, imagine the interface
@@ -26,3 +28,4 @@ Edge case: Another trip (Loop)
 
 If time allows- fun fact about airport codes at closing.
 Closing: "Thanks for searching your airports with us. Travel safely!"
+
