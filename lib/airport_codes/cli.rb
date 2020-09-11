@@ -5,13 +5,13 @@ class AirportCodes::CLI
 
     def main
         call
-        starting_from
+        # starting_from
         traveling_to
-        airport_codes
-        enjoy_trip
-        more_trips
-        goodbye
-        list_trips        
+        # airport_codes
+        # enjoy_trip
+        # more_trips
+        # goodbye
+        # list_trips        
     end
 
     def call
@@ -29,6 +29,8 @@ class AirportCodes::CLI
 
     def traveling_to  
         puts "Where are you traveling to?"
+        city = gets.chomp
+        puts API.new.get_data(city)
     end
 
     def airport_codes

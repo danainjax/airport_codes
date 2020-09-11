@@ -2,4 +2,4 @@
 
 require_relative '../lib/airport_codes'
 
-AirportCodes::CLI.new.call
+AirportCodes::CLI.new.main
