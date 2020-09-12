@@ -10,7 +10,7 @@ class AirportCodes::CLI
         # airport_codes
         # enjoy_trip
         # more_trips
-        # goodbye
+        goodbye
         # list_trips        
     end
 
@@ -18,7 +18,7 @@ class AirportCodes::CLI
         puts "                                                       "
         puts " ******************************************************"
         puts "                                                       "
-        puts "Welcome to the Airport Codes Finder. Let's get started!".colorize(:magenta)
+        puts "Welcome to the Airport Codes Finder. Let's get started!".colorize(:red)
         puts "                                                       "
         puts " ******************************************************"
     end
@@ -32,8 +32,11 @@ class AirportCodes::CLI
         city = gets.chomp
         # puts API.new.get_data(city)
         data = API.new.get_data(city)
-        puts data.first["code"]
-        puts data.first["name"]
+        airport_code = data.first["code"] 
+        name = data.first["name"] 
+        puts "                                  "
+        puts "The airport code is #{airport_code} for #{name}.".colorize(:blue)
+        puts "                                  "
         #currently this works, but only when one airport code. If more than one, need to find a way to return those values also. Spent a lot of time on stack overflow trying to understand why I got the convert string to integer error. Method was returning an array not a hash? What? Ask about this in office hours.
         
         
@@ -41,7 +44,8 @@ class AirportCodes::CLI
     end
 
     def airport_codes
-        puts "Your airport codes are #{XXX} to #{YYY}"
+        # puts "Your airport codes are #{XXX} to #{YYY}"
+        # puts "The airport code for #{airport_code} is #{name}."
     end
 
     def enjoy_trip
@@ -53,7 +57,7 @@ class AirportCodes::CLI
     end
 
     def goodbye 
-        puts "Thanks for searching your airports with us. Travel safely!"
+        puts "Thanks for searching your airports with us. Travel safely!".colorize(:red)
     end
 
     def list_trips
