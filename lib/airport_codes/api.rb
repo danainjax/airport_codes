@@ -22,6 +22,11 @@ class API
         json = response.read_body 
 
         JSON.parse(json)
+        # data = JSON.parse(json)
+        # data["code"].each do |code|
+        #     Trips.new(trips["code"], trips["name"], trips["city_name"])
+        # end
+
 
     end
 

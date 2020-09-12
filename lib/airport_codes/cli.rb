@@ -28,9 +28,16 @@ class AirportCodes::CLI
     end
 
     def traveling_to  
-        puts "Where are you traveling to?"
+        puts "Where are you traveling to? (Enter city name)"
         city = gets.chomp
-        puts API.new.get_data(city)
+        # puts API.new.get_data(city)
+        data = API.new.get_data(city)
+        puts data.first["code"]
+        puts data.first["name"]
+        #currently this works, but only when one airport code. If more than one, need to find a way to return those values also. Spent a lot of time on stack overflow trying to understand why I got the convert string to integer error. Method was returning an array not a hash? What? Ask about this in office hours.
+        
+        
+
     end
 
     def airport_codes
