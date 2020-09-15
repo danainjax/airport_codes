@@ -1,5 +1,5 @@
 
-# require 'open-uri'
+require 'open-uri'
 require 'json'
 require 'uri'
 require 'net/http'
@@ -7,7 +7,7 @@ require 'openssl'
 
 class API
 
-    def get_data(city)
+    def airports_hash(city)
         url = URI("https://tripadvisor1.p.rapidapi.com/airports/search?query=#{city}")
 
         http = Net::HTTP.new(url.host, url.port)

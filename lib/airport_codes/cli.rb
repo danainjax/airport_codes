@@ -3,10 +3,13 @@ require 'pry'
 
 class AirportCodes::CLI
 
+    @@airports = []
+
+
     def main
         call
         # starting_from
-        traveling_to
+        get_code
         # airport_codes
         # enjoy_trip
         # more_trips
@@ -27,26 +30,52 @@ class AirportCodes::CLI
         puts "Hello Traveler, where are you starting from?"
     end
 
-    def traveling_to  
+    def get_code  
         puts "Where are you traveling to? (Enter city name)"
         city = gets.chomp
-        # puts API.new.get_data(city)
-        data = API.new.get_data(city)
-        airport_code = data.first["code"] 
-        name = data.first["name"] 
+        # puts API.new.airports_hash(city)
+        airports = API.new.airports_hash(city)
+        airport_code = airports[0]["code"] 
+        # airport_code_2 = airports[1]["code"]
+
+        
+
+        #Need to instantiate either a new trip or new airport code object here. Ask Ally about this. Can I not use the airport_codes lib file to make a class AirportCodes? I don' think so because when I created the gem it made a module?? Can maybe make a new trip? That may work.
+
+        #Need more *MEAT*...need to display more data at one time. How do we get all the airports and names to populate for the city? How about all the airports in a state?? Whatever is easiest to grab. 
+
+        # airport_code = data[0]
+        name = airports[0]["name"] 
+        #put the code into the codes array?
+        #instantiate and Airport.new
         puts "                                  "
         puts "The airport code is #{airport_code} for #{name}.".colorize(:blue)
         puts "                                  "
-        #currently this works, but only when one airport code. If more than one, need to find a way to return those values also. Spent a lot of time on stack overflow trying to understand why I got the convert string to integer error. Method was returning an array not a hash? What? Ask about this in office hours.
+        # puts airport_code_2
+        # name = airports[1]["name"]
+        # puts "                                  "
+        # puts "The airport code is #{airport_code} for #{name}.".colorize(:blue)
+        # puts "                                  "
         
+        # data.each do | attribute, value|
+        #     puts "#{attribute}: #{value}"
+        # end
+
+        #currently this works, but only when *one* airport code. If more than one, need to find a way to return those values also. **LIGHTBULB**: iteration??? Get help understanding how to iterate thru with airport codes and names returned. I believe the date type is a nested hash. Need to understand how to iterate through this and puts out the codes and names.
         
+#         !-- BUGS LIST:
+# Whitefish breaks the program
+# Smyrna breaks the program
+# Smith breaks the program
+# Jefferson City breaks the program
+# Need to find a way to display an error message if no data??? -->
 
     end
 
-    def airport_codes
-        # puts "Your airport codes are #{XXX} to #{YYY}"
-        # puts "The airport code for #{airport_code} is #{name}."
-    end
+    # def closest_airport_codes
+    #     # puts traveling_to
+    #     #puts a list of the closest airports and their codes based on user traveling_to input
+    # end
 
     def enjoy_trip
         puts "Enjoy your trip from city variable to city variable"

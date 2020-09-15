@@ -50,3 +50,10 @@ Edge case: Another trip (Loop)
 If time allows- fun fact about airport codes at closing.
 Closing: "Thanks for searching your airports with us. Travel safely!"
 
+<!-- BUGS LIST:
+Whitefish breaks the program
+Smyrna breaks the program
+Need to find a way to display an error message if no data??? -->
+
+
+
