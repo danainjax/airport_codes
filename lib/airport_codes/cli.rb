@@ -35,7 +35,14 @@ class AirportCodes::CLI
         city = gets.chomp
         # puts API.new.airports_hash(city)
         airports = API.new.airports_hash(city)
-        airport_code = airports[0]["code"] 
+        #this is where the parsed JSON data returns an array of hashes
+        #now...iterate thru the array of hashes and puts out the code and name instead of hard coding below.
+        airports.each do |airport|
+            puts "#{airport["code"]} is the airport code for #{airport["name"]}"
+        end
+
+
+        # airport_code = airports[0]["code"] 
         # airport_code_2 = airports[1]["code"]
 
         
@@ -45,12 +52,12 @@ class AirportCodes::CLI
         #Need more *MEAT*...need to display more data at one time. How do we get all the airports and names to populate for the city? How about all the airports in a state?? Whatever is easiest to grab. 
 
         # airport_code = data[0]
-        name = airports[0]["name"] 
+        # name = airports[0]["name"] 
         #put the code into the codes array?
         #instantiate and Airport.new
-        puts "                                  "
-        puts "The airport code is #{airport_code} for #{name}.".colorize(:blue)
-        puts "                                  "
+        # puts "                                  "
+        # puts "The airport code is #{airport_code} for #{name}.".colorize(:blue)
+        # puts "                                  "
         # puts airport_code_2
         # name = airports[1]["name"]
         # puts "                                  "
