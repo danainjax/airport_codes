@@ -4,7 +4,7 @@ class Airport
 
     attr_accessor :code, :name
 
-    def initialize
+    def initialize(code, name)
         @code = code
         @name = name
         @@all << self
