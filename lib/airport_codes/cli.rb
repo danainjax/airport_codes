@@ -33,9 +33,10 @@ class AirportCodes::CLI
         #this is where the parsed JSON data returns an array of hashes
         #now...iterate thru the array of hashes and puts out the code and name instead of hard coding 
         airports.each do |airport|
-            Airport.new(airport["code"], airport["name"])
-            puts "#{airport["code"]} is the airport code for #{airport["name"]}"
-            puts Airport.all
+            airport_object = Airport.new(airport["code"], airport["name"])
+            # puts "#{airport["code"]} is the airport code for #{airport["name"]}"
+            puts "#{airport_object.code} is the airport code for #{airport_object.name}"
+              # raise Airport.all.inspect
         end
         
         #Need to instantiate a new airport object here. Ask Ally about this. How do I give my Airport object attributes when instantiated? Then store and then list? Which file do we do this in?
@@ -59,6 +60,7 @@ class AirportCodes::CLI
         get_codes
         more_codes
         end
+        goodbye
     end
     #Need to make the program loop back to get_codes while Y, if N then run the goodbye method.
 
@@ -67,7 +69,7 @@ class AirportCodes::CLI
     end
 
     def list_codes
-        Airport.all
+        Airport.all 
     
     end
 
