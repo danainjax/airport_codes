@@ -66,8 +66,12 @@ class AirportCodes::CLI
     end
 
     def list_codes
-        puts Airport.all 
-    
+        airports_array = Airport.all 
+        airports_array.each do |airport|
+            puts "#{airport.name} // Airport code : #{airport.code}"
+        end
+
+        #iterate through array of Airport.all and puts out the airports with code and name
     end
 
 end
