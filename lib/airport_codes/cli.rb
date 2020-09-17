@@ -39,18 +39,18 @@ class AirportCodes::CLI
               # raise Airport.all.inspect
         end
         
-        #Need to instantiate a new airport object here. Ask Ally about this. How do I give my Airport object attributes when instantiated? Then store and then list? Which file do we do this in?
     end
-    
-        
 #         !-- BUGS LIST:
 # Need to find a way to display an error message if no data??? --> if statement
 
     def more_codes
+
+        loop do
         puts "Do you need more codes? Type Y for yes or N for no"
-        more = gets.chomp
-        
-        while more == "Y" 
+        answer = gets.chomp
+        if answer != 'Y'
+        break
+        end
         puts "                                                       "
         puts " ******************************************************"
         puts "                                                       "
@@ -58,18 +58,15 @@ class AirportCodes::CLI
         puts "                                                       "
         puts " ******************************************************"
         get_codes
-        more_codes
-        end
-        goodbye
+        end  
     end
-    #Need to make the program loop back to get_codes while Y, if N then run the goodbye method.
 
     def goodbye 
         puts "Thanks for searching your airports with us. Travel safely!".colorize(:red)
     end
 
     def list_codes
-        Airport.all 
+        puts Airport.all 
     
     end
 
