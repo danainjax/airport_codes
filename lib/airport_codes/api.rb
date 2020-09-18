@@ -22,9 +22,7 @@ class API
         json = response.read_body 
 
         JSON.parse(json)
-        # data["airports"].each do |airport|
-        #     Airport.new(airport["code"], airport["name"])
-        # end
+        
         
        
     end

@@ -16,18 +16,23 @@ class AirportCodes::CLI
     end
 
     def call
-        puts "                                                       "
+        puts ""
         puts " ******************************************************"
-        puts "                                                       "
+        puts ""
         puts "Welcome to the Airport Codes Finder. Let's get started!".colorize(:red)
-        puts "                                                       "
+        puts ""
         puts " ******************************************************"
     end
     
 
     def get_codes  
+        puts ""
         puts "Where are you traveling to? (Enter city, or state, or country)"
+        puts ""
+        puts " ******************************************************"
+        puts ""
         city = gets.chomp
+        puts ""
         # puts API.new.airports_hash(city)
         airports = API.new.airports_hash(city)
         #this is where the parsed JSON data returns an array of hashes
@@ -37,6 +42,9 @@ class AirportCodes::CLI
             # puts "#{airport["code"]} is the airport code for #{airport["name"]}"
             puts "#{airport_object.code} is the airport code for #{airport_object.name}"
               # raise Airport.all.inspect
+            puts ""
+            puts " ******************************************************"
+            puts ""
         end
         
     end
@@ -47,6 +55,9 @@ class AirportCodes::CLI
 
         loop do
         puts "Do you need more codes? Type Y for yes or N for no"
+        puts ""
+        puts " ******************************************************"
+        puts ""
         answer = gets.chomp
         if answer != 'Y'
         break
@@ -62,13 +73,22 @@ class AirportCodes::CLI
     end
 
     def goodbye 
+        puts ""
+        puts " ******************************************************"
+        puts ""
         puts "Thanks for searching your airports with us. Travel safely!".colorize(:red)
+        puts ""
+        puts " ******************************************************"
+        puts ""
     end
 
     def list_codes
+        puts ""
+        puts "**** Here is a list of all codes searched: ****".colorize(:red)
         airports_array = Airport.all 
         airports_array.each do |airport|
-            puts "#{airport.name} // Airport code : #{airport.code}"
+        puts ""
+            puts "#{airport.name} // Airport code : #{airport.code}".colorize(:blue)
         end
 
         #iterate through array of Airport.all and puts out the airports with code and name

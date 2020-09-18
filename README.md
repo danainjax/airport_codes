@@ -1,8 +1,14 @@
 # AirportCodes
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/airport_codes`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to the AirportCodes CLI. 
 
-TODO: Delete this and the text above, and describe your gem
+This is a command line interface that converts a city into a three letter IATA airport code.
+
+An IATA airport code converts a city into a three-letter code to identify a particular airport in that city for use with documents relating to passenger reservations and ticketing as well as flight timetables, luggage tags, air traffic control, and other standard industry procedures. Knowing your specific airport code makes searches more efficient and accurate. Travel agents use code converters in their global distribution systems. 
+
+For more information about IATA airport codes please see the following Wiki:
+https://en.wikipedia.org/wiki/IATA_airport_code
+
 
 ## Installation
 
@@ -22,7 +28,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type the following in the terminal to execute the program:
+    ./bin/airport_codes
 
 ## Development
 
@@ -32,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>/airport_codes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/<github username>/airport_codes/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://https://github.com/danainjax/airport_codes. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct]https://github.com/danainjax/airport_codes/blob/master/CODE_OF_CONDUCT.md.
 
 
 ## License
@@ -41,4 +48,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the AirportCodes project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>/airport_codes/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the AirportCodes project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct]https://github.com/danainjax/airport_codes/blob/master/CODE_OF_CONDUCT.md.
