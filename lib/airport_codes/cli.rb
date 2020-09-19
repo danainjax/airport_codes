@@ -3,9 +3,6 @@ require 'pry'
 
 class AirportCodes::CLI
 
-    @@airports = []
-
-
     def main
         call
         info_menu
