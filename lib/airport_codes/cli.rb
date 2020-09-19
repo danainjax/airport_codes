@@ -4,18 +4,65 @@ require 'pry'
 class AirportCodes::CLI
 
     def main
-        call
         info_menu
         get_codes
         more_codes
         list_codes 
+        fun_facts
         goodbye
               
     end
 
-    def call
+    def fun_facts
+        input = ""
         
+            while input != "exit"
+                puts""
+                puts"******  F U N    F A C T S ****** ".colorize(:red)
+                puts "Here you can find fun facts about airport codes."
+                puts""
+                puts "Choose a number for the item you wish to learn more about.".colorize(:red)
+                puts ""
+                puts "1. What is an airport code?"
+                puts "2. What are the different types of airport codes?"
+                puts "3. Why are airport codes three letters?"
+                puts "4. How do airports get their codes"
+                puts "5. How many airport codes are there?"
+                puts "***************************************"
+                puts "To quit, type 'exit'. Type 'Y' for more codes.".colorize(:red)
+                puts "What would you like to do?"
+        
+              input = gets.strip
+        
+              case input
+              when "1"
+                puts "******************************************************"
+                puts Scraper.new.what_is_an_airport_code
+                puts "******************************************************"
+              when "2"
+                puts "******************************************************"
+                puts Scraper.new.different_types
+                puts "******************************************************"
+              when "3"
+                puts "******************************************************"
+                puts Scraper.new.three_letters
+                puts "******************************************************"
+              when "4"
+                puts "******************************************************"
+                puts Scraper.new.how
+                puts "******************************************************"
+              when "5"
+                puts "******************************************************"
+                puts Scraper.new.how_many
+                puts "******************************************************"
+              when "Y"
+                puts "******************************************************" 
+                get_codes
+            end
+        end
     end
+        
+    
 
     def info_menu
         puts ""
@@ -24,46 +71,7 @@ class AirportCodes::CLI
         puts "Welcome to the Airport Codes Finder. Let's get started!".colorize(:red)
         puts ""
         puts " ******************************************************"
-            input = ""
-        
-            while input != "codes"
-                puts "Here you can find information about airport codes.".colorize(:blue)
-                puts "Choose a number for the item you wish to learn more about.".colorize(:red)
-                puts ""
-                puts "To get codes type: codes"
-                puts "1. What is an airport code?"
-                puts "2. What are the different types of airport codes?"
-                puts "3. Why are airport codes three letters?"
-                puts "4. How do airports get their codes"
-                puts "5. How many airport codes are there?"
-                puts ""
-                puts "To quit, type 'exit'."
-                puts "What would you like to do?"
-        
-              input = gets.strip
-        
-              case input
-              when "1"
-                puts Scraper.new.what_is_an_airport_code
-                puts ""
-              when "2"
-                puts Scraper.new.different_types
-                puts""
-              when "3"
-                puts Scraper.new.three_letters
-                puts""
-              when "4"
-                puts Scraper.new.how
-                puts""
-              when "5"
-                puts Scraper.new.how_many
-                puts""
-              when "RUN"
-                get_codes
-            
-            end
-        end
-    end
+    end   
 
     
 
@@ -82,7 +90,7 @@ class AirportCodes::CLI
         airports.each do |airport|
             airport_object = Airport.new(airport["code"], airport["name"])
             # puts "#{airport["code"]} is the airport code for #{airport["name"]}"
-            puts "#{airport_object.code} is the airport code for #{airport_object.name}"
+            puts "#{airport_object.code} is the airport code for #{airport_object.name}".colorize(:red)
               # raise Airport.all.inspect
             puts ""
             puts " ******************************************************"
