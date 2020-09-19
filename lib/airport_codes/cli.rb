@@ -23,26 +23,42 @@ class AirportCodes::CLI
     end
 
     def info_menu
-        puts "Here is some more information about airport codes.".colorize(:blue)
-        puts "Choose a number for the item you wish to learn more about.".colorize(:red)
-        puts ""
-        puts "1. What is an airport code?"
-        puts "2. What are the different types of airport codes?"
-        puts "3. Why are airport codes three letters?"
-        puts "4. How do airports get their codes"
-        puts "5. How many airport codes are there?"
-        puts ""
-
-        puts Scraper.new.what_is_an_airport_code
-        puts ""
-        puts Scraper.new.different_types
-        puts""
-        puts Scraper.new.three_letters
-        puts""
-        puts Scraper.new.how
-        puts""
-        puts Scraper.new.how_many
-        puts""
+            input = ""
+        
+            while input != "exit"
+                puts "Here is some more information about airport codes.".colorize(:blue)
+                puts "Choose a number for the item you wish to learn more about.".colorize(:red)
+                puts ""
+                puts "1. What is an airport code?"
+                puts "2. What are the different types of airport codes?"
+                puts "3. Why are airport codes three letters?"
+                puts "4. How do airports get their codes"
+                puts "5. How many airport codes are there?"
+                puts ""
+                puts "To quit, type 'exit'."
+                puts "What would you like to do?"
+        
+              input = gets.strip
+        
+              case input
+              when "1"
+                puts Scraper.new.what_is_an_airport_code
+                puts ""
+              when "2"
+                puts Scraper.new.different_types
+                puts""
+              when "3"
+                puts Scraper.new.three_letters
+                puts""
+              when "4"
+                puts Scraper.new.how
+                puts""
+              when "5"
+                puts Scraper.new.how_many
+                puts""
+              
+            end
+        end
     end
 
     
