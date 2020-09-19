@@ -8,6 +8,7 @@ class AirportCodes::CLI
 
     def main
         call
+        info_menu
         get_codes
         more_codes
         list_codes 
@@ -23,6 +24,21 @@ class AirportCodes::CLI
         puts ""
         puts " ******************************************************"
     end
+
+    def info_menu
+        puts "Here is some more information about airport codes.".colorize(:blue)
+        puts "Choose a number for the item you wish to learn more about.".colorize(:red)
+        puts ""
+        puts "1. What is an airport code?"
+        puts "2. What are the different types of airport codes?"
+        puts "3. Why are airport codes three letters?"
+        puts "4. How do airports get their codes"
+        puts "5. How many airport codes are there?"
+        puts ""
+
+        Scraper.new.get_general_info
+    end
+
     
 
     def get_codes  
