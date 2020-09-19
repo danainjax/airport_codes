@@ -36,7 +36,16 @@ class AirportCodes::CLI
         puts "5. How many airport codes are there?"
         puts ""
 
-        Scraper.new.get_general_info
+        puts Scraper.new.what_is_an_airport_code
+        puts ""
+        puts Scraper.new.different_types
+        puts""
+        puts Scraper.new.three_letters
+        puts""
+        puts Scraper.new.how
+        puts""
+        puts Scraper.new.how_many
+        puts""
     end
 
     
