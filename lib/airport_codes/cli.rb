@@ -14,21 +14,23 @@ class AirportCodes::CLI
     end
 
     def call
+        
+    end
+
+    def info_menu
         puts ""
         puts " ******************************************************"
         puts ""
         puts "Welcome to the Airport Codes Finder. Let's get started!".colorize(:red)
         puts ""
         puts " ******************************************************"
-    end
-
-    def info_menu
             input = ""
         
-            while input != "exit"
-                puts "Here is some more information about airport codes.".colorize(:blue)
+            while input != "codes"
+                puts "Here you can find information about airport codes.".colorize(:blue)
                 puts "Choose a number for the item you wish to learn more about.".colorize(:red)
                 puts ""
+                puts "To get codes type: codes"
                 puts "1. What is an airport code?"
                 puts "2. What are the different types of airport codes?"
                 puts "3. Why are airport codes three letters?"
@@ -56,7 +58,9 @@ class AirportCodes::CLI
               when "5"
                 puts Scraper.new.how_many
                 puts""
-              
+              when "RUN"
+                get_codes
+            
             end
         end
     end
