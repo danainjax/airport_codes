@@ -88,9 +88,9 @@ class AirportCodes::CLI
         #this is where the parsed JSON data returns an array of hashes
         #now...iterate thru the array of hashes and puts out the code and name instead of hard coding 
         airports.each do |airport|
-            airport_object = Airport.new(airport["code"], airport["name"])
+            airport_object = Airport.new(airport["code"], airport["display_name"])
             # puts "#{airport["code"]} is the airport code for #{airport["name"]}"
-            puts "#{airport_object.code} is the airport code for #{airport_object.name}".colorize(:red)
+            puts "#{airport_object.code} is the airport code for #{airport_object.display_name}".colorize(:red)
               # raise Airport.all.inspect
             puts ""
             puts " ******************************************************"
@@ -133,16 +133,18 @@ class AirportCodes::CLI
     end
 
     def list_codes
+        system "clear"
         puts ""
         puts "**** Here is a list of all codes searched: ****".colorize(:red)
         airports_array = Airport.all 
         airports_array.each do |airport|
         puts ""
-            puts "#{airport.name} // Airport code : #{airport.code}".colorize(:blue)
+            puts "#{airport.display_name} // Airport code : #{airport.code}".colorize(:blue)
         end
 
         #iterate through array of Airport.all and puts out the airports with code and name
     end
 
 end
+
 

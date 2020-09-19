@@ -2,11 +2,11 @@ class Airport
 
     @@all = []
 
-    attr_accessor :code, :name
+    attr_accessor :code, :display_name
 
-    def initialize(code, name)
+    def initialize(code, display_name)
         @code = code
-        @name = name
+        @display_name = display_name
         @@all << self
     end
 
