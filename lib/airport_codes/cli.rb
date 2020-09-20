@@ -90,7 +90,7 @@ class AirportCodes::CLI
                 puts " '1' - What is an airport code?"
                 puts " '2' - What are the different types of airport codes?"
                 puts " '3' - Why are airport codes three letters?"
-                puts " '4' - How do airports get their codes"
+                puts " '4' - How do airports get their codes?"
                 puts " '5' - How many airport codes are there?"
                 puts "***************************************"
                 puts""
