@@ -76,6 +76,8 @@ class AirportCodes::CLI
     end
 
     def fun_facts
+
+      Scraper.new.scrape
         
         input = ""
         
@@ -103,27 +105,32 @@ class AirportCodes::CLI
               case input
               when "1"
                 puts "******************************************************".colorize(:red)
-                puts Scraper.new.what_is_an_airport_code
+                # puts Scraper.new.what_is_an_airport_code
+                puts Facts.all[0]
                 puts "******************************************************".colorize(:red)
                 sleep 5
               when "2"
                 puts "******************************************************".colorize(:red)
-                puts Scraper.new.different_types
+                # puts Scraper.new.different_types
+                puts Facts.all[1]
                 puts "******************************************************".colorize(:red)
                 sleep 5
               when "3"
                 puts "******************************************************".colorize(:red)
-                puts Scraper.new.three_letters
+                # puts Scraper.new.three_letters
+                puts Facts.all[2]
                 puts "******************************************************".colorize(:red)
                 sleep 5
               when "4"
                 puts "******************************************************".colorize(:red)
-                puts Scraper.new.how
+                # puts Scraper.new.how
+                puts Facts.all[3]
                 puts "******************************************************".colorize(:red)
                 sleep 5
               when "5"
                 puts "******************************************************".colorize(:red)
-                puts Scraper.new.how_many
+                # puts Scraper.new.how_many
+                puts Facts.all[4]
                 puts "******************************************************".colorize(:red)
                 sleep 5
               when "Y"

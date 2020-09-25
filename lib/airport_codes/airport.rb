@@ -2,7 +2,9 @@ class Airport
 
     @@all = []
 
-    attr_accessor :code, :display_name
+    attr_reader :code, :display_name
+
+    
 
     def initialize(code, display_name)
         @code = code
